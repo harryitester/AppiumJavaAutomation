@@ -1,224 +1,90 @@
 pipeline {
     agent any
-    
+
     environment {
         ANDROID_HOME = '/Users/admin/Library/Android/sdk'
         ANDROID_SDK_ROOT = '/Users/admin/Library/Android/sdk'
-        PATH = "${env.PATH}:${env.ANDROID_HOME}/tools:${env.ANDROID_HOME}/platform-tools:${env.ANDROID_HOME}/emulator:$NPM_HOME/.bin"
-        NODE_HOME = '/usr/local/bin/node'
-        NPM_HOME = '/usr/local/lib/node_modules'
-        APPIUM_HOME = '/usr/local/lib/node_modules/appium'
-        M2_HOME = '/opt/homebrew/Cellar/maven/3.9.6/libexec'
-        HOMEBREW_PREFIX = '/opt/homebrew'
+        JAVA_HOME = '/opt/homebrew/opt/openjdk@17'
+        PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/emulator:${ANDROID_HOME}/cmdline-tools/latest/bin:${JAVA_HOME}/bin"
+        EMULATOR_NAME = 'ci_emulator'
     }
-    
+
     stages {
-        stage('Checkout latested code') {
-            steps {
-                checkout scm
-            }
-        }
-        
-        stage('Setup Test Environment') {
+        stage('Verify Tools') {
             steps {
                 sh '''
-                    echo "Setting up environment variables..."
-                    export ANDROID_HOME=$ANDROID_HOME
-                    export ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT
-                    export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$NPM_HOME/.bin
-                    
-                    echo "Verifying Homebrew installation..."
-                    if [ ! -f "/opt/homebrew/bin/brew" ]; then
-                        echo "Homebrew not found. Installing..."
-                        # Create Homebrew directory with proper permissions
-                        sudo mkdir -p /opt/homebrew
-                        sudo chown -R $(whoami):admin /opt/homebrew
-                        
-                        # Download and install Homebrew
-                        curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
-                        
-                        # Set up Homebrew environment
-                        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
-                        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-                        eval "$(/opt/homebrew/bin/brew shellenv)"
-                        
-                        # Initialize Homebrew
-                        /opt/homebrew/bin/brew update
-                    fi
-                    
-                    # Ensure Homebrew is in PATH
-                    eval "$(/opt/homebrew/bin/brew shellenv)"
-                    
-                    echo "Verifying Java installation..."
-                    if ! command -v java &> /dev/null; then
-                        echo "Java not found. Installing..."
-                        /opt/homebrew/bin/brew install openjdk@17
-                        
-                        # Create symbolic link for system Java wrappers
-                        sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
-                    fi
-                    
-                    # Set JAVA_HOME dynamically
-                    export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-                    echo "JAVA_HOME set to: $JAVA_HOME"
-                    
-                    echo "Verifying Java setup..."
-                    java -version
-                    
-                    echo "Verifying Maven installation..."
-                    if ! command -v mvn &> /dev/null; then
-                        echo "Maven not found. Installing..."
-                        /opt/homebrew/bin/brew install maven
-                    fi
-                    
-                    echo "Setting up Maven environment..."
-                    export M2_HOME=$M2_HOME
-                    export PATH=$PATH:$M2_HOME/bin
-                    
-                    echo "Verifying Maven setup..."
-                    mvn --version
-                    
-                    echo "Verifying Android SDK setup..."
-                    if [ ! -d "$ANDROID_HOME/platform-tools" ]; then
-                        echo "Android platform-tools not found. Installing..."
-                        mkdir -p $ANDROID_HOME/platform-tools
-                        curl -o platform-tools.zip https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
-                        unzip -q platform-tools.zip -d $ANDROID_HOME
-                        rm platform-tools.zip
-                    fi
-                    
-                    echo "Verifying platform-tools installation..."
-                    ls -la $ANDROID_HOME/platform-tools
-                    $ANDROID_HOME/platform-tools/adb version
-                    
-                    echo "Verifying Node.js installation..."
-                    if ! command -v node &> /dev/null; then
-                        echo "Node.js not found. Installing..."
-                        /opt/homebrew/bin/brew install node
-                    fi
-                    
-                    echo "Verifying npm installation..."
-                    if ! command -v npm &> /dev/null; then
-                        echo "npm not found. Installing..."
-                        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-                        export NVM_DIR="$HOME/.nvm"
-                        [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-                        nvm install node
-                    fi
+                    echo "Checking for required tools..."
+                    command -v brew || { echo "Homebrew not found! Please install it on the Jenkins agent."; exit 1; }
+                    command -v mvn || { echo "Maven not found! Please install it on the Jenkins agent."; exit 1; }
+                    command -v node || { echo "Node.js not found! Please install it on the Jenkins agent."; exit 1; }
+                    command -v appium || { echo "Appium not found! Please install it on the Jenkins agent."; exit 1; }
+                    command -v adb || { echo "Android SDK platform-tools (adb) not found! Please install it on the Jenkins agent."; exit 1; }
                 '''
             }
         }
-        
-        stage('Install Appium') {
+
+        stage('Setup Android Emulator (ARM64)') {
             steps {
                 sh '''
-                    echo "Installing Appium..."
-                    sudo npm install -g appium
-                    sudo npm install -g appium-doctor
-                    
-                    echo "Verifying Appium installation..."
-                    which appium
-                    appium --version
-                    appium-doctor --android
-                    
-                    echo "Setting up Appium environment..."
-                    export PATH=$PATH:$NPM_HOME/.bin
-                    echo $PATH
-                '''
-            }
-        }
-        
-        stage('Start Appium Server') {
-            steps {
-                sh '''
-                    echo "Starting Appium server..."
-                    export PATH=$PATH:$NPM_HOME/.bin
-                    which appium
-                    
-                    # Start Appium server with full path
-                    $NPM_HOME/.bin/appium &
-                    APPIUM_PID=$!
-                    sleep 10
-                    
-                    echo "Verifying Appium server is running..."
-                    if ! ps -p $APPIUM_PID > /dev/null; then
-                        echo "Appium server failed to start"
-                        exit 1
+                    # Install ARM64 system image if not present
+                    $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "system-images;android-30;google_apis;arm64-v8a"
+
+                    # Delete old AVD if it exists
+                    if $ANDROID_HOME/emulator/emulator -list-avds | grep -q "Pixel_4_API_30"; then
+                        $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager delete avd -n Pixel_4_API_30
                     fi
-                    
-                    echo "Appium server started successfully with PID: $APPIUM_PID"
+
+                    # Create new ARM64 AVD
+                    echo "no" | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd \
+                        --name Pixel_4_API_30 \
+                        --package "system-images;android-30;google_apis;arm64-v8a" \
+                        --device "pixel_4" \
+                        --force
                 '''
             }
         }
-        
-        stage('Start Android Emulator') {
+
+        stage('Start Emulator') {
             steps {
                 sh '''
-                    echo "Starting Android emulator..."
-                    if [ ! -d "$ANDROID_HOME/emulator" ]; then
-                        echo "Android emulator not found. Installing..."
-                        sdkmanager "emulator"
-                    fi
-                    
-                    $ANDROID_HOME/emulator/emulator -avd Pixel_4_API_30 -no-boot-anim &
-                    sleep 30
-                    
-                    echo "Waiting for emulator to be ready..."
-                    $ANDROID_HOME/platform-tools/adb wait-for-device
-                    $ANDROID_HOME/platform-tools/adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+                    echo "Creating AVD if it doesn't exist..."
+                    echo "no" | avdmanager create avd -n $EMULATOR_NAME -k "system-images;android-30;google_apis;x86" --force || true
+
+                    echo "Starting emulator in headless mode..."
+                    $ANDROID_HOME/emulator/emulator -avd $EMULATOR_NAME -no-window -no-audio -no-boot-anim -wipe-data &
+                    EMULATOR_PID=$!
+
+                    echo "Waiting for emulator to boot..."
+                    adb wait-for-device
+                    boot_completed=""
+                    until [ "$boot_completed" = "1" ]; do
+                        sleep 5
+                        boot_completed=$(adb shell getprop sys.boot_completed | tr -d '\r')
+                        echo "Boot completed: $boot_completed"
+                    done
+                    echo "Emulator is ready."
                 '''
             }
         }
-        
-        stage('Build and Test') {
+
+        stage('Run Tests') {
             steps {
                 sh '''
-                    echo "Building and running tests..."
-                    export PATH=$PATH:$M2_HOME/bin
-                    which mvn
+                    echo "Running tests..."
                     mvn clean test
                 '''
             }
         }
-        
-        stage('Generate Allure Report') {
-            steps {
-                sh '''
-                    echo "Generating Allure report..."
-                    export PATH=$PATH:$M2_HOME/bin
-                    mvn allure:report
-                '''
-            }
-        }
     }
-    
+
     post {
         always {
-            allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'target/allure-results']]
-            ])
-            
             sh '''
                 echo "Stopping Appium server..."
-                pkill -f appium
-                
+                pkill -f appium || true
                 echo "Stopping Android emulator..."
-                $ANDROID_HOME/platform-tools/adb emu kill
+                $ANDROID_HOME/platform-tools/adb emu kill || true
             '''
-            
-            cleanWs()
-        }
-        
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        
-        failure {
-            echo 'Pipeline failed!'
         }
     }
-} 
+}
