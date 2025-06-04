@@ -1,0 +1,307 @@
+10:47:55.429 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:51:24.379 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:54:18.769 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:54:19.186 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:54:19.189 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+10:54:19.850 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 5
+10:54:20.432 [main] INFO  com.calculator.pages.CalculatorPage - Clicked plus button
+10:54:21.053 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 3
+10:54:21.965 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+10:54:21.965 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+10:54:33.823 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:54:33.824 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+10:54:45.660 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:54:45.821 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:54:45.822 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+10:54:47.620 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:54:47.620 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+10:54:56.998 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:54:57.114 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:54:57.115 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+10:54:57.867 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 6
+10:54:59.043 [main] INFO  com.calculator.pages.CalculatorPage - Clicked multiply button
+10:54:59.652 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 7
+10:55:00.559 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+10:55:00.559 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+10:55:11.330 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:55:11.330 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+10:55:13.139 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:55:13.268 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:55:13.269 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+10:55:13.773 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:55:13.773 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+10:58:20.564 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:58:20.983 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:58:20.985 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+10:58:21.646 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 5
+10:58:22.214 [main] INFO  com.calculator.pages.CalculatorPage - Clicked plus button
+10:58:22.834 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 3
+10:58:23.863 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+10:58:23.864 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+10:58:23.919 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+10:58:24.508 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:58:24.508 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+10:58:26.144 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:58:26.284 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:58:26.285 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+10:58:26.773 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:58:26.773 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+10:58:28.392 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:58:28.504 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:58:28.504 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+10:58:29.105 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 6
+10:58:29.694 [main] INFO  com.calculator.pages.CalculatorPage - Clicked multiply button
+10:58:30.300 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 7
+10:58:31.213 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+10:58:31.213 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+10:58:31.259 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+10:58:31.806 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:58:31.807 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+10:58:33.555 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+10:58:33.739 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+10:58:33.739 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+10:58:33.987 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+10:58:33.987 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:01:10.424 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:01:10.835 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:01:10.837 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+11:01:11.503 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 5
+11:01:12.103 [main] INFO  com.calculator.pages.CalculatorPage - Clicked plus button
+11:01:12.723 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 3
+11:01:13.782 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:01:13.782 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+11:01:13.829 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+11:01:14.014 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:01:14.014 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:01:15.620 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:01:15.754 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:01:15.755 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+11:01:16.335 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 2
+11:01:16.931 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:01:17.526 [main] INFO  com.calculator.pages.CalculatorPage - Clicked divide button
+11:01:18.159 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:01:19.188 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:01:19.188 [main] INFO  com.calculator.pages.CalculatorPage - Performed division: 20 / 4
+11:01:19.236 [main] INFO  com.calculator.tests.CalculatorTests - Division test completed successfully
+11:01:19.451 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:01:19.451 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:01:21.045 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:01:21.145 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:01:21.146 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+11:01:21.761 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 6
+11:01:22.352 [main] INFO  com.calculator.pages.CalculatorPage - Clicked multiply button
+11:01:22.967 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 7
+11:01:24.014 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:01:24.014 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+11:01:24.064 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+11:01:24.597 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:01:24.598 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:01:26.189 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:01:26.302 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:01:26.303 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+11:01:26.908 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 1
+11:01:27.571 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:01:28.188 [main] INFO  com.calculator.pages.CalculatorPage - Clicked minus button
+11:01:28.805 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:01:29.851 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:01:29.852 [main] INFO  com.calculator.pages.CalculatorPage - Performed subtraction: 10 - 4
+11:01:29.918 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
+11:01:30.242 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:01:30.242 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:06:00.226 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:06:00.625 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:06:00.659 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+11:06:01.302 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 5
+11:06:01.898 [main] INFO  com.calculator.pages.CalculatorPage - Clicked plus button
+11:06:02.487 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 3
+11:06:03.495 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:06:03.495 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+11:06:03.533 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+11:06:04.092 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:06:04.092 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:06:05.819 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:06:05.962 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:06:10.973 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+11:06:11.787 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 2
+11:06:12.387 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:06:13.409 [main] INFO  com.calculator.pages.CalculatorPage - Clicked divide button
+11:06:14.030 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:06:15.117 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:06:15.118 [main] INFO  com.calculator.pages.CalculatorPage - Performed division: 20 / 4
+11:06:15.322 [main] INFO  com.calculator.tests.CalculatorTests - Division test completed successfully
+11:06:15.911 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:06:15.913 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:06:17.629 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:06:17.751 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:06:22.756 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+11:06:23.863 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 6
+11:06:25.333 [main] INFO  com.calculator.pages.CalculatorPage - Clicked multiply button
+11:06:25.915 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 7
+11:06:26.942 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:06:26.942 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+11:06:27.010 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+11:06:27.440 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:06:27.440 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:06:29.179 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:06:29.315 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:06:34.319 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+11:06:35.553 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 1
+11:06:36.171 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:06:36.771 [main] INFO  com.calculator.pages.CalculatorPage - Clicked minus button
+11:06:37.390 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:06:38.452 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:06:38.452 [main] INFO  com.calculator.pages.CalculatorPage - Performed subtraction: 10 - 4
+11:06:38.514 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
+11:06:39.078 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:06:39.078 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:08:38.665 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:08:38.666 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:08:38.666 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:08:49.922 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:08:50.319 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:08:55.364 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+11:08:56.472 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 5
+11:08:57.056 [main] INFO  com.calculator.pages.CalculatorPage - Clicked plus button
+11:08:57.638 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 3
+11:08:58.668 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:08:58.668 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+11:08:58.724 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+11:08:59.006 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:08:59.006 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:09:00.769 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:09:00.913 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:09:05.923 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+11:09:06.650 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 2
+11:09:07.237 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:09:07.836 [main] INFO  com.calculator.pages.CalculatorPage - Clicked divide button
+11:09:08.452 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:09:09.464 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:09:09.464 [main] INFO  com.calculator.pages.CalculatorPage - Performed division: 20 / 4
+11:09:09.507 [main] INFO  com.calculator.tests.CalculatorTests - Division test completed successfully
+11:09:09.730 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:09:09.731 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:09:11.384 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:09:11.507 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:09:16.513 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+11:09:17.287 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 6
+11:09:17.871 [main] INFO  com.calculator.pages.CalculatorPage - Clicked multiply button
+11:09:18.489 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 7
+11:09:19.523 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:09:19.524 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+11:09:19.588 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+11:09:19.796 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:09:19.796 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:09:21.499 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:09:21.615 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:09:26.620 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+11:09:27.288 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 1
+11:09:27.875 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:09:28.456 [main] INFO  com.calculator.pages.CalculatorPage - Clicked minus button
+11:09:29.055 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:09:30.080 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:09:30.080 [main] INFO  com.calculator.pages.CalculatorPage - Performed subtraction: 10 - 4
+11:09:30.116 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
+11:09:30.333 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:09:30.333 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:11:10.845 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:11:10.847 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:11:10.847 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:11:23.890 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:11:24.635 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:11:29.707 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+11:11:30.210 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 5
+11:11:31.440 [main] INFO  com.calculator.pages.CalculatorPage - Clicked plus button
+11:11:32.044 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 3
+11:11:33.086 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:11:33.086 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+11:11:33.131 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+11:11:33.513 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:11:33.513 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:11:35.338 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:11:35.564 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:11:40.576 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+11:11:41.896 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 2
+11:11:42.517 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:11:43.574 [main] INFO  com.calculator.pages.CalculatorPage - Clicked divide button
+11:11:44.195 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:11:45.239 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:11:45.239 [main] INFO  com.calculator.pages.CalculatorPage - Performed division: 20 / 4
+11:11:45.311 [main] INFO  com.calculator.tests.CalculatorTests - Division test completed successfully
+11:11:45.652 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:11:45.653 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:11:47.362 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:11:47.529 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:11:52.537 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+11:11:53.442 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 6
+11:11:54.024 [main] INFO  com.calculator.pages.CalculatorPage - Clicked multiply button
+11:11:54.621 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 7
+11:11:55.674 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:11:55.674 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+11:11:55.715 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+11:11:55.943 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:11:55.943 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+11:11:57.605 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+11:11:57.779 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+11:12:02.784 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+11:12:04.571 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 1
+11:12:05.180 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 0
+11:12:05.760 [main] INFO  com.calculator.pages.CalculatorPage - Clicked minus button
+11:12:06.400 [main] INFO  com.calculator.pages.CalculatorPage - Clicked digit: 4
+11:12:07.438 [main] INFO  com.calculator.pages.CalculatorPage - Clicked equals button
+11:12:07.438 [main] INFO  com.calculator.pages.CalculatorPage - Performed subtraction: 10 - 4
+11:12:07.514 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
+11:12:07.914 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+11:12:07.914 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+13:08:12.030 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+13:08:12.032 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+13:08:12.032 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+13:08:16.268 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+13:08:16.999 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+13:08:22.101 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+13:08:22.480 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 5
+13:08:23.708 [main] INFO  com.calculator.pages.BasePage - Clicked element: plus
+13:08:24.339 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 3
+13:08:25.369 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+13:08:25.369 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+13:08:25.425 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 8
+13:08:25.430 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+13:08:26.200 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+13:08:26.200 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+13:08:28.049 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+13:08:28.277 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+13:08:33.286 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+13:08:33.966 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 2
+13:08:34.542 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 0
+13:08:35.142 [main] INFO  com.calculator.pages.BasePage - Clicked element: divide
+13:08:35.741 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 4
+13:08:36.768 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+13:08:36.768 [main] INFO  com.calculator.pages.CalculatorPage - Performed division: 20 / 4
+13:08:36.817 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 5
+13:08:36.818 [main] INFO  com.calculator.tests.CalculatorTests - Division test completed successfully
+13:08:37.096 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+13:08:37.096 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+13:08:38.809 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+13:08:38.978 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+13:08:43.985 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+13:08:44.721 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 6
+13:08:45.309 [main] INFO  com.calculator.pages.BasePage - Clicked element: multiply
+13:08:45.901 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 7
+13:08:46.958 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+13:08:46.959 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+13:08:47.034 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 42
+13:08:47.035 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+13:08:47.364 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+13:08:47.364 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+13:08:49.063 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+13:08:49.332 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+13:08:54.344 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+13:08:55.043 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 1
+13:08:55.664 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 0
+13:08:56.474 [main] INFO  com.calculator.pages.BasePage - Clicked element: minus
+13:08:57.077 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 4
+13:08:58.109 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+13:08:58.109 [main] INFO  com.calculator.pages.CalculatorPage - Performed subtraction: 10 - 4
+13:08:58.152 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 6
+13:08:58.152 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
+13:08:58.546 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+13:08:58.546 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
