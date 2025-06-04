@@ -10,6 +10,7 @@ pipeline {
         NPM_HOME = '/usr/local/lib/node_modules'
         APPIUM_HOME = '/usr/local/lib/node_modules/appium'
         M2_HOME = '/usr/local/Cellar/maven/3.9.6/libexec'
+        HOMEBREW_PREFIX = '/usr/local'
     }
     
     stages {
@@ -27,10 +28,18 @@ pipeline {
                     export ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT
                     export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$NPM_HOME/.bin
                     
+                    echo "Verifying Homebrew installation..."
+                    if ! command -v brew &> /dev/null; then
+                        echo "Homebrew not found. Installing..."
+                        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+                        echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.profile
+                        eval "$(/usr/local/bin/brew shellenv)"
+                    fi
+                    
                     echo "Verifying Maven installation..."
                     if ! command -v mvn &> /dev/null; then
                         echo "Maven not found. Installing..."
-                        brew install maven
+                        /usr/local/bin/brew install maven
                     fi
                     
                     echo "Setting up Maven environment..."
@@ -56,7 +65,7 @@ pipeline {
                     echo "Verifying Node.js installation..."
                     if ! command -v node &> /dev/null; then
                         echo "Node.js not found. Installing..."
-                        brew install node
+                        /usr/local/bin/brew install node
                     fi
                     
                     echo "Verifying npm installation..."
