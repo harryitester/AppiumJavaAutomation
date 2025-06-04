@@ -22,10 +22,10 @@ public class AppiumConfig {
 
     private static void initializeDriver() {
         UiAutomator2Options options = new UiAutomator2Options()
-                .setDeviceName("Android Device")
-                .setUdid("emulator-5554") 
+                .setDeviceName("Pixel 4")
+                .setUdid("emulator-5556") 
                 .setAppPackage("com.google.android.calculator")
-                .setAppActivity("com.android.calculator2.Calculator")
+                .setAppActivity("Calculator")
                 .setAutomationName("UiAutomator2")
                 .setNoReset(true)
                 .setAvdLaunchTimeout(Duration.ofSeconds(60))
@@ -33,7 +33,7 @@ public class AppiumConfig {
                 .setNewCommandTimeout(Duration.ofSeconds(30));
 
         try {
-            driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+            driver = new AndroidDriver(new URL("http://0.0.0.0:4723/"), options);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             logger.info("Appium driver initialized successfully");
         } catch (MalformedURLException e) {

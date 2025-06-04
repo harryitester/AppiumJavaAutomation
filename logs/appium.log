@@ -305,3 +305,86 @@
 13:08:58.152 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
 13:08:58.546 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
 13:08:58.546 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+16:10:38.451 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:10:38.454 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:10:38.454 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:11:46.879 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:11:46.881 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:11:46.881 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:16:02.839 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:16:02.842 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:16:02.842 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:16:37.416 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:16:37.418 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:16:37.419 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:17:26.332 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:17:26.333 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:17:26.334 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:24:02.483 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:24:02.485 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:24:02.486 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:27:49.511 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:27:49.513 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:27:49.513 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:29:30.612 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:29:30.614 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:29:30.614 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:32:48.490 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:32:48.492 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:32:48.493 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:36:11.419 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:36:11.421 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:36:11.421 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:40:33.830 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:40:33.833 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:40:33.833 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:40:36.489 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:40:37.210 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:40:37.257 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+16:40:38.090 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 5
+16:40:38.694 [main] INFO  com.calculator.pages.BasePage - Clicked element: plus
+16:40:39.320 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 3
+16:40:40.253 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:40:40.254 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+16:40:40.339 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 8
+16:40:40.344 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+16:40:40.577 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:40:40.577 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+16:40:42.181 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:40:42.413 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:40:47.424 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+16:40:48.078 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 2
+16:40:48.673 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 0
+16:40:49.286 [main] INFO  com.calculator.pages.BasePage - Clicked element: divide
+16:40:49.911 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 4
+16:40:50.833 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:40:50.833 [main] INFO  com.calculator.pages.CalculatorPage - Performed division: 20 / 4
+16:40:50.910 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 5
+16:40:50.910 [main] INFO  com.calculator.tests.CalculatorTests - Division test completed successfully
+16:40:51.107 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:40:51.107 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+16:40:52.699 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:40:52.859 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:40:57.869 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+16:40:58.525 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 6
+16:40:59.118 [main] INFO  com.calculator.pages.BasePage - Clicked element: multiply
+16:40:59.730 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 7
+16:41:00.654 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:41:00.654 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+16:41:00.734 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 42
+16:41:00.734 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+16:41:00.911 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:41:00.911 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+16:41:02.536 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:41:02.716 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:41:02.717 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+16:41:03.328 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 1
+16:41:03.938 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 0
+16:41:04.541 [main] INFO  com.calculator.pages.BasePage - Clicked element: minus
+16:41:05.159 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 4
+16:41:06.202 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:41:06.202 [main] INFO  com.calculator.pages.CalculatorPage - Performed subtraction: 10 - 4
+16:41:06.259 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 6
+16:41:06.259 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
+16:41:06.440 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:41:06.440 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
