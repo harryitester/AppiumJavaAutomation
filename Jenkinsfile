@@ -29,12 +29,22 @@ pipeline {
                     export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$NPM_HOME/.bin
                     
                     echo "Verifying Homebrew installation..."
-                    if ! command -v brew &> /dev/null; then
+                    if [ ! -f "/usr/local/bin/brew" ]; then
                         echo "Homebrew not found. Installing..."
-                        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-                        echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.profile
-                        eval "$(/usr/local/bin/brew shellenv)"
+                        # Download Homebrew installation script
+                        curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /usr/local
+                        
+                        # Set up Homebrew environment
+                        echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+                        echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
+                        export PATH="/usr/local/bin:$PATH"
+                        
+                        # Initialize Homebrew
+                        /usr/local/bin/brew update
                     fi
+                    
+                    # Ensure Homebrew is in PATH
+                    export PATH="/usr/local/bin:$PATH"
                     
                     echo "Verifying Maven installation..."
                     if ! command -v mvn &> /dev/null; then
