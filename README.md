@@ -1,6 +1,40 @@
-# Appium Calculator Test Automation
+# Appium Calculator Test Automation Framework
 
-This project contains automated tests for the Android Calculator app using Appium, Java, and TestNG.
+A robust test automation framework for testing the Android Calculator app using Appium, Java, TestNG, and Allure reporting.
+
+## Framework Architecture
+
+The framework follows the Page Object Model (POM) design pattern with the following structure:
+
+```
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/
+│               └── calculator/
+│                   ├── pages/
+│                   │   ├── BasePage.java         # Base page with common functionality
+│                   │   ├── CalculatorPage.java   # Main calculator page
+│                   │   ├── KeypadPage.java       # Numeric keypad component
+│                   │   └── OperationsPage.java   # Calculator operations component
+│                   ├── tests/
+│                   │   └── CalculatorTests.java  # Test cases
+│                   └── utils/
+│                       └── AppiumConfig.java     # Appium configuration
+├── testng.xml           # TestNG configuration
+├── pom.xml             # Maven dependencies
+├── Jenkinsfile         # CI/CD pipeline
+└── README.md
+```
+
+## Key Features
+
+- **Page Object Model**: Well-structured page objects for better maintainability
+- **Component-Based Design**: Separated keypad and operations components
+- **Allure Reporting**: Detailed test reports with steps and screenshots
+- **Logging**: Comprehensive logging using Log4j2
+- **CI/CD Integration**: Jenkins pipeline for automated testing
+- **Cross-Platform**: Supports both emulator and physical devices
 
 ## Prerequisites
 
@@ -10,50 +44,40 @@ This project contains automated tests for the Android Calculator app using Appiu
 - Appium Server
 - Android SDK
 - Android Emulator
-- Jenkins
+- Jenkins (for CI/CD)
 
-## Jenkins Setup Instructions
+## Framework Components
 
-1. Install Jenkins:
-   ```bash
-   brew install jenkins
-   ```
+### BasePage
+- Common functionality for all page objects
+- WebElement interaction methods
+- Logging setup
+- PageFactory initialization
 
-2. Start Jenkins:
-   ```bash
-   brew services start jenkins
-   ```
+### KeypadPage
+- Numeric input handling
+- Digit button elements
+- Multi-digit number support
 
-3. Install Required Jenkins Plugins:
-   - Git plugin
-   - Pipeline plugin
-   - Allure Jenkins Plugin
-   - Android Emulator Plugin
+### OperationsPage
+- Calculator operations (add, subtract, multiply, divide)
+- Operation button elements
+- Clear and equals functionality
 
-4. Configure Jenkins:
-   - Go to Jenkins Dashboard > Manage Jenkins > Global Tool Configuration
-   - Configure JDK 17
-   - Configure Maven
-   - Configure Android SDK
+### CalculatorPage
+- High-level calculator operations
+- Result field handling
+- Integration of KeypadPage and OperationsPage
 
-5. Create New Pipeline:
-   - Go to Jenkins Dashboard > New Item
-   - Enter a name for your pipeline
-   - Select "Pipeline" as the project type
-   - Click OK
-   - In the Pipeline configuration:
-     - Select "Pipeline script from SCM"
-     - Choose "Git" as SCM
-     - Enter your repository URL
-     - Set the branch to */main
-     - Set the Script Path to "Jenkinsfile"
-   - Click Save
+## Test Cases
 
-6. Run the Pipeline:
-   - Click "Build Now" on your pipeline
-   - Monitor the build progress in the console output
+The framework includes test cases for basic calculator operations:
+- Addition (5 + 3 = 8)
+- Subtraction (10 - 4 = 6)
+- Multiplication (6 * 7 = 42)
+- Division (20 / 4 = 5)
 
-## Local Development Setup
+## Setup Instructions
 
 1. Install dependencies:
    ```bash
@@ -80,23 +104,6 @@ This project contains automated tests for the Android Calculator app using Appiu
    mvn allure:serve
    ```
 
-## Project Structure
-
-```
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── com/
-│   │           └── calculator/
-│   │               ├── pages/
-│   │               ├── tests/
-│   │               └── utils/
-├── testng.xml
-├── pom.xml
-├── Jenkinsfile
-└── README.md
-```
-
 ## CI/CD Pipeline
 
 The Jenkins pipeline performs the following steps:
@@ -114,3 +121,25 @@ Test reports are generated using Allure and can be viewed:
 - In Jenkins after each build
 - Locally using `mvn allure:serve`
 - In the `target/allure-report` directory
+
+## Best Practices
+
+1. **Page Object Model**
+   - Each page/component has its own class
+   - Elements are defined using annotations
+   - Methods represent user actions
+
+2. **Logging**
+   - Comprehensive logging for debugging
+   - Log4j2 configuration
+   - Step-by-step operation logging
+
+3. **Test Organization**
+   - Clear test method names
+   - Descriptive test annotations
+   - Proper setup and teardown
+
+4. **Error Handling**
+   - Proper exception handling
+   - Meaningful error messages
+   - Screenshot capture on failure
