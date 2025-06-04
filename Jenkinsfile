@@ -4,12 +4,11 @@ pipeline {
     environment {
         ANDROID_HOME = '/Users/admin/Library/Android/sdk'
         ANDROID_SDK_ROOT = '/Users/admin/Library/Android/sdk'
-        JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home'
         PATH = "${env.PATH}:${env.ANDROID_HOME}/tools:${env.ANDROID_HOME}/platform-tools:${env.ANDROID_HOME}/emulator:$NPM_HOME/.bin"
         NODE_HOME = '/usr/local/bin/node'
         NPM_HOME = '/usr/local/lib/node_modules'
         APPIUM_HOME = '/usr/local/lib/node_modules/appium'
-        M2_HOME = '/usr/local/Cellar/maven/3.9.6/libexec'
+        M2_HOME = '/opt/homebrew/Cellar/maven/3.9.6/libexec'
         HOMEBREW_PREFIX = '/opt/homebrew'
     }
     
@@ -49,6 +48,22 @@ pipeline {
                     
                     # Ensure Homebrew is in PATH
                     eval "$(/opt/homebrew/bin/brew shellenv)"
+                    
+                    echo "Verifying Java installation..."
+                    if ! command -v java &> /dev/null; then
+                        echo "Java not found. Installing..."
+                        /opt/homebrew/bin/brew install openjdk@17
+                        
+                        # Create symbolic link for system Java wrappers
+                        sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+                    fi
+                    
+                    # Set JAVA_HOME dynamically
+                    export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+                    echo "JAVA_HOME set to: $JAVA_HOME"
+                    
+                    echo "Verifying Java setup..."
+                    java -version
                     
                     echo "Verifying Maven installation..."
                     if ! command -v mvn &> /dev/null; then
