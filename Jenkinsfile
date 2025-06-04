@@ -10,7 +10,7 @@ pipeline {
         NPM_HOME = '/usr/local/lib/node_modules'
         APPIUM_HOME = '/usr/local/lib/node_modules/appium'
         M2_HOME = '/usr/local/Cellar/maven/3.9.6/libexec'
-        HOMEBREW_PREFIX = '/usr/local'
+        HOMEBREW_PREFIX = '/opt/homebrew'
     }
     
     stages {
@@ -29,27 +29,31 @@ pipeline {
                     export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$NPM_HOME/.bin
                     
                     echo "Verifying Homebrew installation..."
-                    if [ ! -f "/usr/local/bin/brew" ]; then
+                    if [ ! -f "/opt/homebrew/bin/brew" ]; then
                         echo "Homebrew not found. Installing..."
-                        # Download Homebrew installation script
-                        curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /usr/local
+                        # Create Homebrew directory with proper permissions
+                        sudo mkdir -p /opt/homebrew
+                        sudo chown -R $(whoami):admin /opt/homebrew
+                        
+                        # Download and install Homebrew
+                        curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
                         
                         # Set up Homebrew environment
-                        echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-                        echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
-                        export PATH="/usr/local/bin:$PATH"
+                        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
+                        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+                        eval "$(/opt/homebrew/bin/brew shellenv)"
                         
                         # Initialize Homebrew
-                        /usr/local/bin/brew update
+                        /opt/homebrew/bin/brew update
                     fi
                     
                     # Ensure Homebrew is in PATH
-                    export PATH="/usr/local/bin:$PATH"
+                    eval "$(/opt/homebrew/bin/brew shellenv)"
                     
                     echo "Verifying Maven installation..."
                     if ! command -v mvn &> /dev/null; then
                         echo "Maven not found. Installing..."
-                        /usr/local/bin/brew install maven
+                        /opt/homebrew/bin/brew install maven
                     fi
                     
                     echo "Setting up Maven environment..."
@@ -75,7 +79,7 @@ pipeline {
                     echo "Verifying Node.js installation..."
                     if ! command -v node &> /dev/null; then
                         echo "Node.js not found. Installing..."
-                        /usr/local/bin/brew install node
+                        /opt/homebrew/bin/brew install node
                     fi
                     
                     echo "Verifying npm installation..."
