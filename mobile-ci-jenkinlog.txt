@@ -1,0 +1,505 @@
+Started by user Harry Nguyen
+Replayed #10
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /Users/admin/.jenkins/workspace/Mobile
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+No credentials specified
+ > git rev-parse --resolve-git-dir /Users/admin/.jenkins/workspace/Mobile/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/harryitester/AppiumJavaAutomation # timeout=10
+Fetching upstream changes from https://github.com/harryitester/AppiumJavaAutomation
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.3 (Apple Git-146)'
+ > git fetch --tags --force --progress -- https://github.com/harryitester/AppiumJavaAutomation +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision ee498b266940d107ce0beba5990c3ee1bca15000 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ee498b266940d107ce0beba5990c3ee1bca15000 # timeout=10
+Commit message: "update Jenkinfile"
+ > git rev-list --no-walk ee498b266940d107ce0beba5990c3ee1bca15000 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Install Appium)
+[Pipeline] sh
++ echo 'Setting up npm global directory...'
+Setting up npm global directory...
++ mkdir -p /Users/admin/.npm-global
++ npm config set prefix /Users/admin/.npm-global
++ echo 'Installing Appium globally...'
+Installing Appium globally...
++ npm install -g appium
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+npm warn deprecated glob@6.0.4: Glob versions prior to v9 are no longer supported
+
+added 20 packages, and changed 391 packages in 13s
+
+81 packages are looking for funding
+  run `npm fund` for details
++ echo 'Verifying Appium installation...'
+Verifying Appium installation...
++ export PATH=/Users/admin/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/cmdline-tools/latest/bin:/opt/homebrew/opt/openjdk@17/bin:/Users/admin/.npm-global/bin
++ PATH=/Users/admin/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/cmdline-tools/latest/bin:/opt/homebrew/opt/openjdk@17/bin:/Users/admin/.npm-global/bin
++ appium --version
+2.19.0
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify Tools)
+[Pipeline] sh
++ export PATH=/Users/admin/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/cmdline-tools/latest/bin:/opt/homebrew/opt/openjdk@17/bin:/Users/admin/.npm-global/bin
++ PATH=/Users/admin/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/cmdline-tools/latest/bin:/opt/homebrew/opt/openjdk@17/bin:/Users/admin/.npm-global/bin
++ echo 'Checking for required tools...'
+Checking for required tools...
++ command -v brew
+/opt/homebrew/bin/brew
++ command -v mvn
+/opt/homebrew/bin/mvn
++ command -v node
+/opt/homebrew/bin/node
++ command -v appium
+/Users/admin/.npm-global/bin/appium
++ command -v adb
+/Users/admin/Library/Android/sdk/platform-tools/adb
++ command -v emulator
+/Users/admin/Library/Android/sdk/emulator/emulator
++ echo 'All required tools are present.'
+All required tools are present.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Setup Android Emulator)
+[Pipeline] sh
++ echo 'Ensuring ARM64 system image is installed...'
+Ensuring ARM64 system image is installed...
++ /Users/admin/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager 'system-images;android-30;google_apis;arm64-v8a'
+Warning: This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Loading package information...                                                  Loading local repository...                                                     Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. Errors limit exceeded. To receive all errors set com.sun.xml.bind logger to FINEST level.
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+[                                       ] 3% Loading local repository...        [                                       ] 3% Fetch remote repository...         [=                                      ] 3% Fetch remote repository...         [=                                      ] 4% Fetch remote repository...         [=                                      ] 5% Fetch remote repository...         [==                                     ] 5% Fetch remote repository...         [==                                     ] 6% Fetch remote repository...         [==                                     ] 7% Fetch remote repository...         [==                                     ] 7% Computing updates...               [===                                    ] 8% Computing updates...               [===                                    ] 10% Computing updates...              [=======================================] 100% Computing updates...             
+
++ echo 'Removing old AVD if it exists...'
+Removing old AVD if it exists...
++ /Users/admin/Library/Android/sdk/emulator/emulator -list-avds
++ grep -q '^ci_emulator$'
++ echo 'Creating new ARM64 AVD...'
+Creating new ARM64 AVD...
++ echo no
++ /Users/admin/Library/Android/sdk/cmdline-tools/latest/bin/avdmanager create avd --name ci_emulator --package 'system-images;android-30;google_apis;arm64-v8a' --device pixel_4 --force
+Loading local repository...                                                     Warning: This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+Warning: package.xml parsing problem. unexpected element (uri:"", local:"abis"). Expected elements are <{}vendor>,<{}codename>,<{}base-extension>,<{}abi>,<{}api-level>,<{}extension-level>,<{}tag>
+[=========                              ] 25% Loading local repository...       [=========                              ] 25% Fetch remote repository...        [=======================================] 100% Fetch remote repository...       
+Auto-selecting single ABI arm64-v8a
++ echo 'Available AVDs:'
+Available AVDs:
++ /Users/admin/Library/Android/sdk/emulator/emulator -list-avds
+Android
+Medium_Phone_API_36.0
+Pixel_4_API_36
+ci_emulator
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Start Emulator)
+[Pipeline] sh
++ echo 'Starting emulator in headless mode...'
+Starting emulator in headless mode...
++ EMULATOR_PID=93758
++ echo 'Waiting for emulator to boot...'
+Waiting for emulator to boot...
++ adb wait-for-device
++ /Users/admin/Library/Android/sdk/emulator/emulator -avd ci_emulator -no-window -no-audio -no-boot-anim -wipe-data
++ boot_completed=
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ tr -d $'\r'
+++ adb shell getprop sys.boot_completed
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ tr -d $'\r'
+++ adb shell getprop sys.boot_completed
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
+adb: more than one device/emulator
++ boot_completed=
++ echo '   Boot completed: '
+   Boot completed: 
++ '[' '' = 1 ']'
++ sleep 3
+++ adb shell getprop sys.boot_completed
+++ tr -d $'\r'
++ boot_completed=1
++ echo '   Boot completed: 1'
+   Boot completed: 1
++ '[' 1 = 1 ']'
++ echo 'Emulator is ready.'
+Emulator is ready.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Install Calculator App)
+[Pipeline] sh
++ echo 'Installing Calculator APK on emulator...'
+Installing Calculator APK on emulator...
++ adb install -r apps/Calculator.apk
+Performing Streamed Install
+Success
++ echo 'Calculator app installed.'
+Calculator app installed.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run Tests)
+[Pipeline] sh
++ export PATH=/Users/admin/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/cmdline-tools/latest/bin:/opt/homebrew/opt/openjdk@17/bin:/Users/admin/.npm-global/bin
++ PATH=/Users/admin/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin/Library/Android/sdk/emulator:/Users/admin/Library/Android/sdk/cmdline-tools/latest/bin:/opt/homebrew/opt/openjdk@17/bin:/Users/admin/.npm-global/bin
++ echo 'Running tests...'
+Running tests...
++ mvn clean test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.calculator:calculator-appium-tests >---------------
+[INFO] Building calculator-appium-tests 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ calculator-appium-tests ---
+[INFO] Deleting /Users/admin/.jenkins/workspace/Mobile/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ calculator-appium-tests ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ calculator-appium-tests ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 6 source files with javac [debug target 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ calculator-appium-tests ---
+[INFO] skip non existing resourceDirectory /Users/admin/.jenkins/workspace/Mobile/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ calculator-appium-tests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ calculator-appium-tests ---
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] No tests to run.
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+16:44:50.206 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:44:50.208 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:44:50.208 [main] WARN  org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+16:44:55.416 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:44:56.297 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:45:01.393 [main] INFO  com.calculator.tests.CalculatorTests - Starting addition test
+16:45:02.166 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 5
+16:45:02.759 [main] INFO  com.calculator.pages.BasePage - Clicked element: plus
+16:45:03.465 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 3
+16:45:04.500 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:45:04.500 [main] INFO  com.calculator.pages.CalculatorPage - Performed addition: 5 + 3
+16:45:04.557 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 8
+16:45:04.560 [main] INFO  com.calculator.tests.CalculatorTests - Addition test completed successfully
+16:45:04.751 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:45:04.751 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+16:45:06.307 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:45:06.556 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:45:11.562 [main] INFO  com.calculator.tests.CalculatorTests - Starting division test
+16:45:12.199 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 2
+16:45:12.773 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 0
+16:45:13.474 [main] INFO  com.calculator.pages.BasePage - Clicked element: divide
+16:45:14.096 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 4
+16:45:15.002 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:45:15.002 [main] INFO  com.calculator.pages.CalculatorPage - Performed division: 20 / 4
+16:45:15.165 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 5
+16:45:15.165 [main] INFO  com.calculator.tests.CalculatorTests - Division test completed successfully
+16:45:15.369 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:45:15.369 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+16:45:17.058 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:45:17.263 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:45:22.270 [main] INFO  com.calculator.tests.CalculatorTests - Starting multiplication test
+16:45:22.894 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 6
+16:45:23.512 [main] INFO  com.calculator.pages.BasePage - Clicked element: multiply
+16:45:24.110 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 7
+16:45:25.053 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:45:25.053 [main] INFO  com.calculator.pages.CalculatorPage - Performed multiplication: 6 * 7
+16:45:25.111 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 42
+16:45:25.111 [main] INFO  com.calculator.tests.CalculatorTests - Multiplication test completed successfully
+16:45:25.286 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:45:25.287 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+16:45:26.877 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver initialized successfully
+16:45:27.050 [main] INFO  com.calculator.tests.CalculatorTests - Test setup completed
+16:45:27.051 [main] INFO  com.calculator.tests.CalculatorTests - Starting subtraction test
+16:45:27.694 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 1
+16:45:28.294 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 0
+16:45:28.878 [main] INFO  com.calculator.pages.BasePage - Clicked element: minus
+16:45:29.470 [main] INFO  com.calculator.pages.BasePage - Clicked element: digit 4
+16:45:30.487 [main] INFO  com.calculator.pages.BasePage - Clicked element: equals
+16:45:30.488 [main] INFO  com.calculator.pages.CalculatorPage - Performed subtraction: 10 - 4
+16:45:30.593 [main] INFO  com.calculator.pages.BasePage - Got text from element result: 6
+16:45:30.593 [main] INFO  com.calculator.tests.CalculatorTests - Subtraction test completed successfully
+16:45:30.728 [main] INFO  com.calculator.utils.AppiumConfig - Appium driver closed successfully
+16:45:30.728 [main] INFO  com.calculator.tests.CalculatorTests - Test teardown completed
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 51.58 s -- in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  55.395 s
+[INFO] Finished at: 2025-06-04T16:45:37+07:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
++ echo 'Stopping Appium server (if running)...'
+Stopping Appium server (if running)...
++ pkill -f appium
++ echo 'Stopping Android emulator (if running)...'
+Stopping Android emulator (if running)...
++ /Users/admin/Library/Android/sdk/platform-tools/adb emu kill
+OK: killing emulator, bye bye
+OK
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
